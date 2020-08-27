@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="count">
+      <input type="text" id="screen" class="counts total" disabled />
+    </div>
+
+    <div class="calculator">
+      <input type="text" id="display" class="calculators header" disabled />
+    </div>
+    <div class="calculator-function">
+      <button type="button" class="function a" disabled>MC</button>
+      <button type="button" class="function b" disabled>MR</button>
+      <button type="button" class="function c" disabled>M+</button>
+      <button type="button" class="function d" disabled>M-</button>
+      <button type="button" class="function e" disabled>MS</button>
+    </div>
+
+    <div class="calculator-footer">
+      <!--first line-->
+      <button type="button" class="button percentage" disabled>&#37;</button>
+      <button type="button" class="button clear-entry" disabled>CE</button>
+      <button type="button" class="button clear" onclick="clearAll()">C</button>
+      <button
+        type="button"
+        class="button delete"
+        id="delete"
+        onclick="deleted()"
+      >
+        <i class="material-icons">backspace</i>
+      </button>
+
+      <!--Second line-->
+      <button type="button" class="button fraction" disabled>1/x</button>
+      <button type="button" class="button power" disabled>x&#178;</button>
+      <button type="button" class="button square-root" disabled>
+        &#8730;&#8339;
+      </button>
+      <button type="button" class="button divide" onclick="count('/')">
+        &divide;
+      </button>
+
+      <!--Third line-->
+      <button type="button" class="button seven" onclick="d('7')">7</button>
+      <button type="button" class="button eight" onclick="d('8')">8</button>
+      <button type="button" class="button nine" onclick="d('9')">9</button>
+      <button type="button" class="button times" onclick="count('*')">
+        &times;
+      </button>
+
+      <!--forth line-->
+      <button type="button" class="button four" onclick="d('4')">4</button>
+      <button type="button" class="button five" onclick="d('5')">5</button>
+      <button type="button" class="button six" onclick="d('6')">6</button>
+      <button type="button" class="button minus" onclick="count('-')">
+        &minus;
+      </button>
+
+      <!--fifth line-->
+      <button type="button" class="button one" onclick="d('1')">1</button>
+      <button type="button" class="button two" onclick="d('2')">2</button>
+      <button type="button" class="button three" onclick="d('3')">3</button>
+      <button type="button" class="button add" onclick="count('+')">
+        &plus;
+      </button>
+
+      <!--six line-->
+      <button type="button" class="button plusMinus" disabled>
+        &PlusMinus;
+      </button>
+      <button type="button" class="button zero" onclick="d('0')">0</button>
+      <button type="button" class="button dot" disabled>.</button>
+      <button type="button" class="button equal" onclick="solve()">
+        &equals;
+      </button>
+    </div>
+  </body>
+  <script>
+    // clear
+    function clearAll() {
+      document.getElementById("display").value = " ";
+      document.getElementById("screen").value = " ";
+    }
+
+    //deleted
+    function deleted() {}
+
+    //number
+
+    function d(num) {
+
+      //new number will be display on the screen after solve answer
+      var oldScreenNumber = document.getElementById("screen").value;
+      if(document.getElementById("screen").value=" "){
+        document.getElementById("screen").value+=num;
+      }else{
+        document.getElementById("screen").value=0;
+      }
+
+      //document.getElementById("screen").value += Number(num);
+      document.getElementById("display").value = Number(num);
+    }
+
+    var newScreenNumber = oldScreenNumber.replace(total1,num);
+
+    function count(operation) {
+      if (
+        operation === "+" ||
+        operation === "-" ||
+        operation === "*" ||
+        operation === "/"
+      ) {
+        var currentScreenValue = document.getElementById("screen").value;
+        var lastSavedCharacter = currentScreenValue[currentScreenValue.length - 1];
+        if (
+          lastSavedCharacter === "+" ||
+          lastSavedCharacter === "-" ||
+          lastSavedCharacter === "*" ||
+          lastSavedCharacter === "/"
+        ) {
+          // replace last
+        //   currentScreenValue[currentScreenValue.length - 1] = operation;
+        //   alert(operation)
+        var  newCurrentScreenValue = currentScreenValue.replace(lastSavedCharacter,operation);
+
+        document.getElementById("screen").value = newCurrentScreenValue;
+        } else {
+          document.getElementById("screen").value += operation;
+        }
+      } else {
+        document.getElementById("screen").value += operation;
+      }
+      currentOperator = operation;
+    }
+
+    function solve() {
+      var total1 = document.getElementById("screen").value;
+      let answer = eval(total1);
+      document.getElementById("display").value = answer;
+    }
+  </script>
+</html>

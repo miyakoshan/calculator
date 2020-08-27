@@ -1,0 +1,371 @@
+
+body{
+    background-color: #ececec;
+    width: auto;
+    min-height: 900px;
+}
+
+.count{
+    display: grid;
+    grid-template-rows: repeat(1,[row] 2%);;
+    grid-template-columns: repeat(1,[col] 80%);
+}
+
+.counts{
+    border: none;
+}
+
+.total{
+    background-color: #ececec;
+    grid-row: row 1 / span 1;
+    grid-column: col 1 / span 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: smaller;
+    text-align: right;
+}
+
+.calculator{
+    display: grid;
+    grid-template-rows: repeat(1,[row] 100%);;
+    grid-template-columns: repeat(1,[col] 80%);
+}
+
+.header{
+    border: transparent;
+    background-color: #ececec;
+    grid-row: row 1 / span 1;
+    grid-column: col 1 / span 1;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    font-size: xx-large;
+    text-align: right;
+}
+
+
+/* function part*/
+.calculator-function{
+    width: 80%;
+    height: 45%;
+    display: grid;
+    grid-template-rows: repeat(1,[row] 100%);
+    grid-template-columns: repeat(5,[col] 78px);
+}
+
+.function{
+    background-color: #ececec;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border: none;
+    width: auto;
+}
+
+
+.a{
+    grid-row: row 1 / span 1;
+    grid-column: col 1 / span 1;
+}
+
+.b{
+    grid-row: row 1 / span 1;
+    grid-column: col 2 / span 1;
+}
+
+.c{
+    grid-row: row 1 / span 1;
+    grid-column: col 3 / span 1;
+}
+
+.d{
+    grid-row: row 1 / span 1;
+    grid-column: col 4 / span 1;
+}
+
+.e{
+    grid-row: row 1 / span 1;
+    grid-column: col 5 / span 1;
+}
+
+.a:hover{
+    background-color: #dddddd;
+}
+
+.b:hover{
+    background-color: #dddddd;
+}
+
+.c:hover{
+    background-color: #dddddd;
+}
+
+.d:hover{
+    background-color: #dddddd;
+}
+
+.e:hover{
+    background-color: #dddddd;
+}
+
+
+/*Number part*/
+.calculator-footer{
+    width: 80%;
+    height: 300px;
+    display: grid;
+    grid-template-rows: repeat(6,[row] 115px);
+    grid-template-columns: repeat(4,[col] 25%);
+}
+
+/*grid-template-rows: repeat(6,[row] 32%);*/
+
+.button{
+    border: 1px solid grey;
+    padding: 10px;
+    font-size: xx-large;
+}
+
+/*First line*/
+.percentage{
+    grid-row: row 1 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: #dbe3e5;
+}
+
+.percentage:hover{
+    background-color: #dddddd;
+}
+
+.clear-entry{
+    grid-row: row 1 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: #dbe3e5;
+}
+
+.clear-entry:hover{
+    background-color: #dddddd;
+}
+
+.clear{
+    grid-row: row 1 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: #dbe3e5;
+}
+
+.clear:hover{
+    background-color: #dddddd;
+}
+
+.delete{
+    grid-row: row 1 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #dbe3e5;
+}
+
+.delete:hover{
+    background-color: #dddddd;
+}
+
+/*second line*/
+.fraction{
+    grid-row: row 2 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: #dbe3e5;
+}
+
+.fraction:hover{
+    background-color: #dddddd;
+}
+
+.power{
+    grid-row: row 2 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: #dbe3e5;
+}
+
+.power:hover{
+    background-color: #dddddd;
+}
+
+.square-root{
+    grid-row: row 2 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: #dbe3e5;
+}
+
+.square-root:hover{
+    background-color: #dddddd;
+}
+
+.divide{
+    grid-row: row 2 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #dbe3e5;
+}
+
+.divide:hover{
+    background-color: #dddddd;
+}
+
+/*third line*/
+.seven{
+    grid-row: row 3 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: whitesmoke;
+}
+
+.seven:hover{
+    background-color: #dddddd;
+}
+
+.eight{
+    grid-row: row 3 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: whitesmoke;
+}
+
+.eight:hover{
+    background-color: #dddddd;
+}
+
+.nine{
+    grid-row: row 3 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: whitesmoke;
+}
+
+.nine:hover{
+    background-color: #dddddd;
+}
+
+.times{
+    grid-row: row 3 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #dbe3e5;
+}
+
+.times:hover{
+    background-color: #dddddd;
+}
+
+/*forth line*/
+.four{
+    grid-row: row 4 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: whitesmoke;
+}
+
+.four:hover{
+    background-color: #dddddd;
+}
+
+.five{
+    grid-row: row 4 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: whitesmoke;
+}
+
+.five:hover{
+    background-color: #dddddd;
+}
+
+.six{
+    grid-row: row 4 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: whitesmoke;
+}
+
+.six:hover{
+    background-color: #dddddd;
+}
+
+.minus{
+    grid-row: row 4 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #dbe3e5;
+}
+
+.minus:hover{
+    background-color: #dddddd;
+}
+
+/*fifth line*/
+.one{
+    grid-row: row 5 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: whitesmoke;
+}
+
+.one:hover{
+    background-color: #dddddd;
+}
+
+.two{
+    grid-row: row 5 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: whitesmoke;
+}
+
+.two:hover{
+    background-color: #dddddd;
+}
+
+.three{
+    grid-row: row 5 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: whitesmoke;
+}
+
+.three:hover{
+    background-color: #dddddd;
+}
+
+.add{
+    grid-row: row 5 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #dbe3e5;
+}
+
+.add:hover{
+    background-color: #dddddd;
+}
+
+/* six line*/
+.plusMinus{
+    grid-row: row 6 / span 1;
+    grid-column: col 1 / span 1;
+    background-color: whitesmoke;
+}
+
+.plusMinus:hover{
+    background-color: #dddddd;
+}
+
+.zero{
+    grid-row: row 6 / span 1;
+    grid-column: col 2 / span 1;
+    background-color: whitesmoke;
+}
+
+.zero:hover{
+    background-color: #dddddd;
+}
+
+.dot{
+    grid-row: row 6 / span 1;
+    grid-column: col 3 / span 1;
+    background-color: whitesmoke;
+}
+
+.dot:hover{
+    background-color: #dddddd;
+}
+
+.equal{
+    grid-row: row 6 / span 1;
+    grid-column: col 4 / span 1;
+    background-color: #bbe1fa;
+}
+
+.equal:hover{
+    background-color: #3282b8;
+}
